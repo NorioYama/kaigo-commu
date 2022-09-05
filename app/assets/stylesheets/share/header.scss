@@ -1,0 +1,45 @@
+.top-page-header{
+  height: 80px;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-bar-contents{
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  align-items: center;
+}
+
+.search-form{
+  justify-content: flex-end;
+}
+
+.input-box{
+  height: 30px;
+  width: 30vw;
+}
+
+.kaigo-logo{
+  height: 90px;
+}
+
+.nav{
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
+  align-items: center;
+}
+
+
+.lists-right{
+  width: 65%;
+  display: flex;
+  list-style: none;
+  justify-content:space-around;
+}
+
+.login{
+  margin: 0 20px;
+}

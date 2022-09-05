@@ -1,0 +1,20 @@
+<div class="all-form">
+  <div class="main-form">
+    <h1>パスワードの再発行</h1>
+    <%= form_with model: @user, url: user_password_path , class: 'password-main', locul: true do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="form-email">
+        <%= f.label :メールアドレス %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="password-submit">
+        <%= f.submit "パスワードの再発行をする" %>
+      </div>
+    <% end %>
+    <div class="login-link">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

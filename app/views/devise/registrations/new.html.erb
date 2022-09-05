@@ -1,0 +1,48 @@
+<%= render "shared/second-header" %>
+<%= form_with model: @user, url: user_registration_path , class: 'registration-main', local: true do |f| %>
+
+<div class="all-form">
+  <div class="main-form">
+    <h1>ユーザー登録</h1>
+
+     <%= render 'layouts/error_messages', model: f.object %>   
+
+    
+    <div class="form-nickname">
+      <%= f.label :ニックネーム%><br />
+      <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+    </div>
+
+    <div class="form-sex">
+      <%= f.label :性別%><br />
+      <%= f.collection_select(:sex_id, Sex.all, :id, :name,{}, {class:"form-select"}) %>
+    </div>
+    <div class="form-age">
+      <%= f.label :年齢 %><br />
+      <%= f.collection_select(:age_id, Age.all, :id, :name,{}, {class:"form-select"}) %>
+    </div>
+    <div class="form-email">
+      <%= f.label :メールアドレス %><br />
+      <%= f.email_field :email, autocomplete: "email" %>
+    </div>
+    <div class="form-password">
+      <%= f.label :パスワード %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %>文字以上の半角英数字 )</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+    <div class="from-confirmation">
+      <%= f.label :もう一度パスワードを入力してください %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+    <div class="form-submit">
+      <%= f.submit "登録する" %>
+    </div>
+
+    <div class="login-link">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
+<% end %>

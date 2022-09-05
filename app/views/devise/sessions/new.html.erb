@@ -1,0 +1,35 @@
+<%= render "shared/second-header" %>
+<div class="all-form">
+  <div class="main-form">
+    <h1>ログイン</h1>
+    <%= form_with model: @user, url: user_session_path , class: 'registration-main', local: true do |f| %>
+    <div class='login-flash-message'>
+      <%= alert %> 
+    </div>
+    
+    <div class="form-email">
+      <%= f.label :メールアドレス %><br />
+      <%= f.email_field :email, autofocus: true , autocomplete: "email" %>
+    </div>
+
+    <div class="form-password">
+      <%= f.label :パスワード %>
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, "ログイン情報を保存する" %>
+        </div>
+      <% end %>
+
+    <div class="form-submit">
+       <%= f.submit "ログインする" %>
+    </div>
+    <% end %>
+    <div class="login-link">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
