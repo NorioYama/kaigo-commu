@@ -1,0 +1,72 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+.main-form h1{
+  text-align: center;
+}
+
+.all-form {
+  width: 350px;
+  height: 100%;
+  margin: 60px auto 0;
+  border-radius: 8px;
+  border: 2px #ddd solid;
+}
+
+.form-nickname label, .form-sex label, .form-age label, .form-email label, .form-password, .from-confirmation label {
+  font-weight: 700;
+  font-size: 13px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+}
+
+.form-nickname input[type="text"], .form-email input[type="email"], .form-password input[type="password"],.from-confirmation input[type="password"],.form-select {
+  border-style: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 31px;
+  border: 1px solid #a6a6a6;
+  box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
+  border-radius: 3px;
+  padding: 0 7px;
+}
+
+.form-submit input[type="submit"] {
+  border-style: none;
+  width: 100%;
+  height: 31px;
+  background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+  border-radius: 3px;
+  border: 1px #a88734 solid;
+  margin-top: 30px;
+}
+
+.login-link{
+  margin-top: 30px;
+  text-align: center;
+}
+
+.login-link a{
+  display: block;
+  width: 100%;
+  height: 31px;
+  font-size: 13px;
+  color: #111;
+  line-height: 31px;
+  text-align: center;
+  background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+  border-radius: 3px;
+  border: 1px #a2a6ac solid;
+}
+
+.error-alert ul{
+  list-style: none;
+  color: red;
+}
+
+.login-flash-message{
+  color: red;
+}
