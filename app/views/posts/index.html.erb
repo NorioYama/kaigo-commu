@@ -1,1 +1,31 @@
 <%= render "shared/header" %>
+
+<div class="index-main">
+  <div class="new-post">
+    <h2 class="new-post-title">新着質問</h2>
+    <% @posts.each do |post| %>
+    <li class="list">
+      <div class="post-info">
+        <h3 class="post-title">
+          <%= link_to post.title, post_path(post.id), class: "post-form-link" %>
+        </h3>
+        <div class="post-body">
+          <%= post.body %>
+        </div>
+        <div class="post-info2">
+          <div class="post-tag">
+            <% post.tags.each do |tag| %>
+              <div class="tag-name">
+                <%= tag.tag_name %>
+              </div>
+              <% end %>
+          </div>
+          <div class="post-created">
+            <%= post.created_at.strftime('%Y/%m/%d %H:%M') %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </li>
+  </div>
+</div>

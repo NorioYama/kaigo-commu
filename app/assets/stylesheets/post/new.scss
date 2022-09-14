@@ -1,0 +1,57 @@
+.post-form{
+  padding: 10px 10px;
+}
+
+.main-form2{
+}
+
+.post-form{
+  width: 50%;
+  height: 100%;
+  margin: 30px auto 0;
+  border-radius: 8px;
+  border: 2px #ddd solid;
+}
+
+
+.form-title-t{
+  text-align: center;  
+}
+
+.form-title input[type="text"]{
+  border-style: none;
+  box-sizing: border-box;
+  width: 95%;
+  height:30px;
+  border: 1px solid #a6a6a6;
+  box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.form-body-t {
+  text-align: center;
+}
+
+.form-body-area{
+  border-style: none;
+  box-sizing: border-box;
+  width: 95%;
+  height: 200px;
+  border: 1px solid #a6a6a6;
+  box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
+  border-radius: 3px;
+  margin: 5px 5px;
+  padding: 5px;
+}
+
+
+.form-group{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form-check{
+  padding: 0 5px;
+}
