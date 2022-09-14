@@ -1,7 +1,7 @@
 <%= render "shared/second-header" %>
 <div class="all-form">
   <div class="main-form">
-    <h1>ログイン</h1>
+    <h2>ログイン</h2>
     <%= form_with model: @user, url: user_session_path , class: 'registration-main', local: true do |f| %>
     <div class='login-flash-message'>
       <%= alert %> 

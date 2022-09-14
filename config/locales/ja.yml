@@ -8,6 +8,9 @@ ja:
         sex_id: '性別'
         age_id: '年齢'
         password_confirmation: "確認用パスワード"
+      post:
+        title: 'タイトル'
+        body: '本文'
 
   devise:
     confirmations:

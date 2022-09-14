@@ -34,11 +34,17 @@
 
 
 .lists-right{
-  width: 65%;
+  width: 100%;
   display: flex;
   list-style: none;
-  justify-content:space-around;
+  justify-content:flex-end;
 }
+
+ul.lists-right li{
+  padding-right: 7px;
+}
+
+
 
 .login{
   margin: 0 20px;

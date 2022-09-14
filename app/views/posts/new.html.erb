@@ -1,0 +1,41 @@
+<%= render "shared/header" %>
+<%= form_with model: @post, url: posts_path , class: 'posts-main', local: true do |f| %>
+<div class="post-form">
+  <div class="main-form2">
+    <h2>質問を投稿する</h2>
+    <%= render 'layouts/error_messages', model: f.object %>   
+    <div class="form-title">
+      <div class="form-title-l">
+        <%= f.label :タイトル %><br />
+      </div>
+      <div class="form-title-t">
+        <%= f.text_field :title, autofocus: true %>
+      </div>
+    </div>
+    <div class="form-body">
+      <div class=form-body-l>
+        <%= f.label :本文 %><br />
+      </div>
+      <div class="form-body-t">
+        <%= f.text_area :body,class:"form-body-area" %>
+      </div>
+    </div>
+    <div class='tag-form'>
+     タグを選んでください
+    </div>
+    <div class='form-group'>
+        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :tag_name) do |tag| %>
+            <div class='form-check'>
+                <%= tag.label class: 'form-check-label' do %>
+                    <%= tag.check_box class: 'form-check-input' %>
+                    <%= tag.text %>
+                <% end %>        
+              </div>
+        <% end %>
+    </div>
+    <div class="form-submit">
+      <%= f.submit "投稿する" %>
+    </div>
+  </div>
+</div>
+<% end %>
