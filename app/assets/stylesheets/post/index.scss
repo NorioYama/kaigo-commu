@@ -1,0 +1,46 @@
+.new-post{
+  margin: 10px 10px;
+  width: 30%;
+  height: 100%;
+  border-radius: 8px;
+  border: 2px #ddd solid;
+}
+
+.new-post-title{
+  background-color: bisque;
+}
+
+.post-info{
+  border-radius: 8px;
+  border: 1px #ddd solid;
+  margin: 5px 1px;
+  padding:5px;
+}
+
+li{
+  list-style: none;
+}
+
+
+.post-info2{
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-tag{
+  display: flex;
+}
+
+.tag-name{
+  background-color:bisque;
+  border-radius: 10px;
+  border: 1px #ddd solid;
+  padding: 2px;
+  margin: 2px 2px;
+  font-size: 12px;
+}
+
+
+.post-created{
+  text-align: end;
+}
