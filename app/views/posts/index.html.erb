@@ -12,6 +12,16 @@
     <% @posts.each do |post| %>
     <li class="list">
       <div class="post-info">
+        <div class="post-user">
+          <% if post.user.sex_id == 2 %>
+            <%= link_to image_tag("men.png",class:"men-logo")%>
+          <% else %>
+            <%= link_to image_tag("lady.png",class:"lady-logo")%>
+          <% end %>
+          <div class="user-name">
+            <%= post.user.nickname%>
+          </div>
+      </div>
         <h3 class="post-title">
           <%= link_to post.title, post_path(post.id), class: "post-form-link",method: :get %>
         </h3>
@@ -26,6 +36,7 @@
               </div>
               <% end %>
           </div>
+          <div>
           <div class="post-created">
             <%= post.created_at.strftime('%Y/%m/%d %H:%M') %>
           </div>

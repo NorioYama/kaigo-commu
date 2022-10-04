@@ -2,6 +2,14 @@
 <div class="show-main">
   <div class="post-show">
     <div class="post-main">
+      <div class="user-name">
+      <% if @post.user.sex_id == 2 %>
+        <%= link_to image_tag("men.png",class:"men-logo")%>
+      <% else %>
+        <%= link_to image_tag("lady.png",class:"lady-logo")%>
+      <% end %>
+        <%= @post.user.nickname%>
+      </div> 
       <h3 class="post-title">
         <%= link_to @post.title, post_path(@post.id), class: "post-form-link",method: :get %>
       </h3>
@@ -33,7 +41,7 @@
         <div class="comment">
           <div class="user-info">
             <div class="user-name">
-              <%= comment.user.nickname %>さん
+              <%= comment.user.nickname %>
             </div>
             <div class="comment-created">
               <%= l comment.created_at %>
