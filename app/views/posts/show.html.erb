@@ -45,10 +45,10 @@
         </div>
         <% end %>
     </div>
-    
-    <h4 class="comment-title">＜コメントをする＞</h4>
-    <div class="comment-form">
-      <% if user_signed_in? %>
+
+    <% if user_signed_in? %>
+      <h4 class="comment-title">＜コメントをする＞</h4>
+      <div class="comment-form">
         <%= form_with model: [@post, @comment], id: "comment-form" do |f| %>
           <div class="comment-text">
             <%= f.text_area :text , class: "comment-text-area"%>
@@ -56,8 +56,10 @@
           <div class="comment-sub">
             <%= f.submit "コメントをする", class: "comment-submit" %>
           </div> 
-        <% end %>
-      <% end %> 
-    </div>
+        <% end %> 
+     </div>
+     <% else %>
+       <h4 class="comment-title">＜ ログインすればコメントができます ＞</h4>
+    <% end %>
   </div>
 </div>
