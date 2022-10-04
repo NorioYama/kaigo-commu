@@ -1,0 +1,63 @@
+<%= render "shared/header" %>
+<div class="show-main">
+  <div class="post-show">
+    <div class="post-main">
+      <h3 class="post-title">
+        <%= link_to @post.title, post_path(@post.id), class: "post-form-link",method: :get %>
+      </h3>
+      <div class="post-body">
+        <%= @post.body %>
+      </div>
+      <div class="post-info2">
+        <div class="post-tag">
+          <% @post.tags.each do |tag| %>
+            <div class="tag-name">
+              <%= tag.tag_name %>
+            </div>
+          <% end %>
+        </div>
+        <div class="post-created">
+          <%= @post.created_at.strftime('%Y/%m/%d %H:%M') %>
+         </div>
+      </div>
+      <% if user_signed_in? && current_user.id == @post.user_id%>
+        <div class="delete-edit">
+          <%= link_to '削除する', post_path(@post.id), method: :delete %>
+          <%= link_to '編集する', edit_post_path(@post.id), method: :get %>
+        </div>
+      <% end %>
+    </div>
+    <h4 class="comments-list">＜コメント一覧＞</h4>
+    <div id="comments">
+      <% @post.comments.each do |comment| %>
+        <div class="comment">
+          <div class="user-info">
+            <div class="user-name">
+              <%= comment.user.nickname %>さん
+            </div>
+            <div class="comment-created">
+              <%= l comment.created_at %>
+            </div>
+          </div>
+          <div class="user-comment">
+            <%= comment.text%>
+          </div>
+        </div>
+        <% end %>
+    </div>
+    
+    <h4 class="comment-title">＜コメントをする＞</h4>
+    <div class="comment-form">
+      <% if user_signed_in? %>
+        <%= form_with model: [@post, @comment], id: "comment-form" do |f| %>
+          <div class="comment-text">
+            <%= f.text_area :text , class: "comment-text-area"%>
+          </div>
+          <div class="comment-sub">
+            <%= f.submit "コメントをする", class: "comment-submit" %>
+          </div> 
+        <% end %>
+      <% end %> 
+    </div>
+  </div>
+</div>
