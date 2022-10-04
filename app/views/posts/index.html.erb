@@ -3,11 +3,17 @@
 <div class="index-main">
   <div class="new-post">
     <h2 class="new-post-title">新着質問</h2>
+    <% unless  Post.exists? %>
+      <div class="empty">まだ投稿がありません。<br>
+      右上バーにある「質問する」から投稿してください。<br>
+      登録してない方は、まずは新規登録をしてください！<br>
+      </div>
+    <% end %>
     <% @posts.each do |post| %>
     <li class="list">
       <div class="post-info">
         <h3 class="post-title">
-          <%= link_to post.title, post_path(post.id), class: "post-form-link" %>
+          <%= link_to post.title, post_path(post.id), class: "post-form-link",method: :get %>
         </h3>
         <div class="post-body">
           <%= post.body %>

@@ -8,7 +8,8 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :sex
   belongs_to :age
-  has_many   :posts
+  has_many   :posts, dependent: :destroy
+  has_many   :comments
 
   validates :nickname, presence: true
   validates :sex_id, numericality: { other_than: 1 , message: "を入力してください"}
