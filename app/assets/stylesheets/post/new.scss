@@ -43,6 +43,7 @@
   border-radius: 3px;
   margin: 5px 5px;
   padding: 5px;
+  color:black;
 }
 
 
@@ -55,3 +56,8 @@
 .form-check{
   padding: 0 5px;
 }
+
+button, input, select, textarea {
+  font-family : inherit;
+  font-size : 100%;
+  }
