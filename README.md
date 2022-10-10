@@ -1,24 +1,67 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# アプリケーション名
+kaigo-commu
+# アプリケーション概要
+介護施設で働いている人や介護をしている人に向けた、悩みを共有、解決するためのQ&Aアプリケーション
 
-* Ruby version
+# URL
+https://kaigo-commu.herokuapp.com/
 
-* System dependencies
+# テスト用アカウント	
+Basic認証
+ID admin
+Pass 2222
 
-* Configuration
+# 利用方法	
 
-* Database creation
+## 質問の投稿
+1.ログインページ（ヘッダー）からユーザー新規登録を行う。
+2.利用者の登録を行う。（ニックネーム、性別、年齢、メールアドレス）
+3.質問するページから、タイトルと本文の入力をする。
+4.一覧ページに新着順に質問内容が表示される。
 
-* Database initialization
+## コメントの投稿
+1.ログインする。（新規登録がまだなら新規登録をする）
+2.一覧ページから質問のタイトルをクリックして詳細ページへ遷移する。
+3.詳細ページからコメントを入力すると、コメントが反映される。
 
-* How to run the test suite
+# アプリケーションを作成した背景	
+介護職の離職率は最近は低下してきているものの、全産業の離職率より、特別低いという訳ではありません。私自身が介護職をしている中で、介護にしかない悩みというものはたくさんあります。介護職でしかない悩みの中で代表的なものが認知症の方への接し方です。認知症の方に対する対応というのは正解がなく解決しにくい悩みの一つです。他にも介助技術や知識（入浴や食事など）、夜勤も含めてシフト制であったりと介護職の人たちは他の業種にはない悩みを抱えています。また介護をしている家族も似たような悩みを抱えている方も多いです。そういった悩みを投稿して、共感やアドバイスができて悩みや問題が解決できるように、このアプリケーションを作成しました。
 
-* Services (job queues, cache servers, search engines, etc.)
+# このアプリケーションがなければ
+介護職や介護をしている人で悩みを持っている方が、気軽に悩みを相談できない、問題が解決できない。
 
-* Deployment instructions
+# 洗い出した要件	
+要件定義のスプレッドシート
+https://docs.google.com/spreadsheets/d/1lu7TtDILIlQaq6jA_KoL5qj5OYPm8ds57QCMuHP5XOs/edit#gid=982722306
 
-* ...
+# 実装予定の機能
+いいね機能を実装予定
+
+# データベース設計
+[![Image from Gyazo](https://i.gyazo.com/275117e95658fcc38da21567655baea5.png)](https://gyazo.com/275117e95658fcc38da21567655baea5)
+
+# 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/d006b80d108be6fc8f4f7e19a9201078.png)](https://gyazo.com/d006b80d108be6fc8f4f7e19a9201078)
+
+# 開発環境	
+・フロントエンド
+・バックエンド
+・インフラ
+・テスト
+・テキストエディタ
+・タスク管理
+
+# ローカルでの動作方法
+
+※	git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記載。
+
+% git clone https://github.com/NorioYama/kaigo-commu
+
+% cd kaigo-commu
+
+% rbenv exec gem install bundler 
+
+% yarn install
