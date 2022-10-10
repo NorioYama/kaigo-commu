@@ -1,0 +1,67 @@
+.search-main{
+  display: flex;
+}
+
+.search-result{
+  margin: 10px 10px;
+  width: 40%;
+  height: 100%;
+  border-radius: 8px;
+  border: 2px #ddd solid;
+}
+
+
+.seach-post{
+  margin: 10px 10px;
+  width: 30%;
+  height: 100%;
+  border-radius: 8px;
+  border: 2px #ddd solid;
+}
+
+.new-search{
+  margin: 10px 10px;
+  width: 30vh;
+  height: 200px;
+  border-radius: 8px;
+  border: 2px #ddd solid;
+}
+
+.new-search-tag{
+  margin: 10px 10px;
+  width: 30vh;
+  height: 350px;
+  border-radius: 8px;
+  border: 2px #ddd solid;
+}
+
+
+.tag-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin: 5px 5px;
+}
+
+.seach-field{
+  padding: 10px 10px;
+}
+
+.post_search{
+  padding: 5px 5px;
+}
+
+.search-field{
+  margin: 4px 0;
+}
+
+.search-title{
+  margin-top: 4px;
+}
+
+.search-button{
+  margin-top: 4px;
+}
+
+input[type="submit"] {
+  width: 100%;
+}

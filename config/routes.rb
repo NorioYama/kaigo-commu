@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   resources :posts do
     resources :comments, only: :create
+    collection do
+      get 'search'
+      get 'tag_search'
+    end
   end
 end
