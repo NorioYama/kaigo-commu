@@ -1,13 +1,14 @@
 <header class='top-page-header'>
   <div class='search-bar-contents'>
     <%= link_to image_tag("kaigo_logo.png",class:"kaigo-logo"),root_path%>
-    <form class="search-form" action="#">
-      <input class='input-box' placeholder='キーワードから探す'>
-      <button class="search-button">
-      検索
-      </button>
-      <%= link_to 'タグから探す', "#", class: "tag-list" %>
-    </form>
+    <%= search_form_for Post.ransack(params[:q]), url: search_posts_path, html: {class: "search-form"} do |f| %>
+      <%= f.text_field :title, placeholder: '質問をタイトルから探す', class: 'input-box' %>
+      <br>
+      <%= f.label :submit, class: "search-button" do %>
+        <input type="submit" value="検索" class="send">
+      <%= f.submit :submit, id: "q_submit", style: "display: none;"%>
+      <% end %>
+    <% end %>
   </div>
   <div class='nav'>
     <ul class='lists-right'>

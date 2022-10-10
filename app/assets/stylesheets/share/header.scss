@@ -14,11 +14,18 @@
 
 .search-form{
   justify-content: flex-end;
+  display: flex;
 }
 
 .input-box{
   height: 30px;
   width: 30vw;
+}
+
+.send{
+  height: 33px;
+  width: 50px;
+  margin-left: 5px;
 }
 
 .kaigo-logo{

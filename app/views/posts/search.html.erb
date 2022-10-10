@@ -1,0 +1,73 @@
+<%= render "shared/header" %>
+<div class="search-main">
+  <div class="search-sub">
+    <div class="new-search">
+      <h2 class="new-post-title">検索する</h2>
+        <%= search_form_for @q, url: search_posts_path, html: {id: "detailed-search-form"} do |f| %>
+        <div class="search-field">
+          <%= f.label :title, '質問のタイトルで検索する' %>
+          <br>
+          <%= f.text_field :title, placeholder: 'キーワードを入力' %>
+        </div>
+        <div class="search-field">
+          <%= f.label :body, '質問の内容で検索する' %>
+          <br>
+          <%= f.text_field :body, placeholder: 'キーワードを入力' %>
+        </div>
+        <%= f.submit '検索' %>
+        <% end %>
+    </div>
+    <div class="new-search-tag">
+        <%= form_tag({controller:"posts",action:"search"}, method: :get) do %>
+        <h2 class="new-post-title">タグで検索する</h2>
+        <div class="tag-list">
+          <br>
+          <% Tag.all.each do |t| %>
+            <li><%= check_box :tag_ids, t.tag_name %><%= t.tag_name %></li>
+          <% end %>
+          <%= submit_tag '検索' %>
+        </div>
+        <% end %>
+    </div>
+  </div>
+  <div class="search-result">
+    <div class="search-post">
+      <h2 class="new-post-title">検索結果</h2>
+      <% @posts.each do |post| %>
+      <li class="list">
+        <div class="post-info">
+          <div class="post-user">
+            <% if post.user.sex_id == 2 %>
+              <%= link_to image_tag("men.png",class:"men-logo")%>
+            <% else %>
+              <%= link_to image_tag("lady.png",class:"lady-logo")%>
+            <% end %>
+            <div class="user-name">
+              <%= post.user.nickname%>
+            </div>
+        </div>
+          <h3 class="post-title">
+            <%= link_to post.title, post_path(post.id), class: "post-form-link",method: :get %>
+          </h3>
+          <div class="post-body">
+            <%= post.body %>
+          </div>
+          <div class="post-info2">
+            <div class="post-tag">
+              <% post.tags.each do |tag| %>
+                <div class="tag-name">
+                  <%= tag.tag_name%>
+                </div>
+                <% end %>
+            </div>
+            <div>
+            <div class="post-created">
+              <%= post.created_at.strftime('%Y/%m/%d %H:%M') %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+    </div>
+  </div>
+</div>

@@ -45,6 +45,27 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    if params[:q]&.dig(:title)
+      squished_keywords = params[:q][:title].squish
+      params[:q][:title_cont_any] = squished_keywords.split(" ")
+    end
+    if params[:q]&.dig(:body)
+      squished_keywords = params[:q][:body].squish
+      params[:q][:body_cont_any] = squished_keywords.split(" ")
+    end
+    @q = Post.ransack(params[:q])
+    @posts = @q.result
+    
+    if params[:tag_ids]
+      @posts = []
+      params[:tag_ids].each do |key, value|      
+        @posts += Tag.find_by(tag_name: key).posts if value == "1"
+      end
+      @posts.uniq!
+    end
+  end
+
   private
 
   def post_params
